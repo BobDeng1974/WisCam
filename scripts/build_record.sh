@@ -143,8 +143,8 @@ kernel_make()
 	if [ "$SOURCES_PATH/kernel" ]; then
 		cd $SOURCES_PATH/kernel
 		for sensor in $sensor_set; do
-#			make ARCH=arm "nuwicam_"$sensor"_defconfig_bk"
-			cp arch/arm/configs/nuwicam_gc0308_defconfig_bk .config
+#			make ARCH=arm "nuwicam_"$sensor"_defconfig"
+			cp arch/arm/configs/nuwicam_gc0308_defconfig .config
 			make ARCH=arm
 			if ./build spi; then
 				ls -al ../image/conprog.gz

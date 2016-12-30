@@ -15,6 +15,8 @@ ln -s $PATH_ROOT/etc	/tmp/etc
 echo "http server start"
 ./go_boa.sh  &
 
+telnetd -l /bin/sh &
+
 echo "Ser2net start"
 ./go_ser2net.sh &
 
