@@ -33,9 +33,9 @@ static int32_t s_i32PlayRefCnt = 0;
 #define REC_BLOCK_SIZE 8192
 #define REC_TEMP_BUF_BLOCK 2
 
-#define DEF_OSS_MIC	 	"/dev/dsp"
-#define DEF_OSS_SPK	 	"/dev/dsp"
-#define DEF_OSS_MIXER	"/dev/mixer"
+#define DEF_OSS_MIC	 	"/dev/dsp1"
+#define DEF_OSS_SPK	 	"/dev/dsp1"
+#define DEF_OSS_MIXER	"/dev/mixer1"
 
 static int32_t s_i32RecRefCnt = 0;
 
