@@ -67,6 +67,7 @@ toolchain_clean()
 
 initramfs_make()
 {	
+	
 	echo "$FUNCNAME"
 	if [ -f $SOURCES_PATH/"rootfs-2.6.35.tar.gz" ]; then
 		cd $SOURCES_PATH
