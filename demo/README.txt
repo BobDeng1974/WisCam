@@ -13,4 +13,4 @@ RAK_ARDUINO DEMOS:
 			you can change /mnt/nuwicam/go.sh
 			    such as £º
 				mv /mnt/nuwicam/go.sh /mnt/nuwicam/go.sh.bk
-				then restart£¬and you can test £¬after test you can change go.sh back	
+				then restart the board£¬and you can test audio£¬after test you can 				change go.sh back	
