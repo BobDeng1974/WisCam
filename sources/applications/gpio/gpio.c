@@ -247,6 +247,7 @@ int main(void)
 		}
 		usleep(500000);	
 	}
+	close(gpio_fd);
 
 	return 0;
 }
