@@ -1,4 +1,4 @@
-# rak_5280_arduino
+# WisCam
 
 ## Firmware Building Steps
 1 clone
