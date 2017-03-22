@@ -7,5 +7,5 @@
 2 build
 	sudo chmod u+x ./* -R
 	then execute build.sh
-	cd rak_5280_arduino
+	cd WisCam
 	./scripts/build.sh
