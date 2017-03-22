@@ -6,6 +6,9 @@
 	
 2 build
 	sudo chmod u+x ./* -R
+	
 	then execute build.sh
+	
 	cd WisCam
+	
 	./scripts/build.sh
