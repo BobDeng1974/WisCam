@@ -9,18 +9,18 @@ PORT NAME[PIN] = GPIO [NODE]
 PORTA[ 0]      = gpio[ 0x00]
 PORTA[ 1]      = gpio[ 0x01]	  
                :
-PORTA[31]      = gpio[ 0x1F]
-PORTB[ 0]      = gpio[ 0x20]
+
+PORTB[ 0]      = gpio[ 0x10]
                :
-PORTB[31]      = gpio[ 0x3F]
-               :
-               :
+
                :
                :
-PORTE[ 0]      = gpio[ 0x80]
                :
                :
-PORTE[31]      = gpio[ 0x9F]
+PORTE[ 0]      = gpio[ 0x40]
+               :
+               :
+
 
 The GPIO driver does _not_ touch register MFSEL, and assumes the pin user
 application trys to control is configured as GPIO pin. In other words, the 
