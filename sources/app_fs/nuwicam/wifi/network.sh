@@ -756,4 +756,7 @@ TS=`cat /proc/uptime | awk '{print $1}'`
 echo -e "\033[1;33m[$TS] network-$1 done.\033[m"
 ifconfig lo up
 
+echo timer > /sys/class/leds/LINK/trigger
+echo 1 > /sys/class/leds/LINK/brightness
+
 exit 0
