@@ -10,14 +10,14 @@ PORTA[ 0]      = gpio[ 0x00]
 PORTA[ 1]      = gpio[ 0x01]	  
                :
 
-PORTB[ 0]      = gpio[ 0x10]
+PORTB[ 0]      = gpio[ 0x20]
                :
 
                :
                :
                :
                :
-PORTE[ 0]      = gpio[ 0x40]
+PORTE[ 0]      = gpio[ 0x80]
                :
                :
 
