@@ -223,7 +223,7 @@ E_CONFIG_GROUP configs_search_groupname (char* pHeadPtr)
 	char *pPtr = NULL;
 	for ( i=0 ;i <eCONFIG_GROUP_CNT ;i++ ) 
 		if ( (pPtr=strstr(pHeadPtr, g_astrGroupName[i])) != NULL ){
-			printf("$$$$$$g_astrGroupName[%d]=%s$$$$$\n",i,g_astrGroupName[i]);
+			
 			return i;			
 
 		}
@@ -243,7 +243,6 @@ int configs_update ( char * pcStr )
 		if ( (eGroupID=configs_search_groupname ( pHeadPtr )) != eCONFIG_GROUP_UNKNOWN )
 		{
 			
-			printf("********configs_search_groupname*****\n");
 			char *pSavePtr = NULL;
 			char *pToken = strtok_r(pHeadPtr + strlen(g_astrGroupName[eGroupID]) + 1, "&", &pSavePtr);
 			char *pParamName, *pParamValue;
@@ -252,7 +251,6 @@ int configs_update ( char * pcStr )
 				pParamName = strtok(pToken, "=");
 				pParamValue = pParamName + strlen(pParamName) + 1;
 				
-				//printf("pParamName: %s, pParamValue: %s\r\n\r\n", pParamName, pParamValue);
 
 				if ( WriteParamStr(eGroupID, pParamName, pParamValue) != 0 )
 				{
@@ -294,7 +292,6 @@ int configs_process ( char * pcStr )
 		else if (strstr(pHeadPtr, "update") != NULL) {
 			pHeadPtr += strlen("update&");
 			ret = configs_update(pHeadPtr);
-			printf("&&&&&&&&pHeadptr=%s&&&&&&&&&\n",pHeadPtr);
 				
 		}
 	}
