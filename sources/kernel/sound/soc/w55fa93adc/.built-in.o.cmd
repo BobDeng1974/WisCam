@@ -1,1 +1,0 @@
-cmd_sound/soc/w55fa93adc/built-in.o :=  arm-linux-ld -EL    -r -o sound/soc/w55fa93adc/built-in.o sound/soc/w55fa93adc/snd-soc-w55fa93adc-pcm.o sound/soc/w55fa93adc/snd-soc-w55fa93adc-adc.o sound/soc/w55fa93adc/snd-soc-w55fa93adc-audio.o 

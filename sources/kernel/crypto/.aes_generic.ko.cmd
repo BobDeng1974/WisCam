@@ -1,1 +1,0 @@
-cmd_crypto/aes_generic.ko := arm-linux-ld -EL -r  -T /home/swt/workspace/numaker/NuMaker_NuWicam_RDK-master/sources/kernel/scripts/module-common.lds --build-id -o crypto/aes_generic.ko crypto/aes_generic.o crypto/aes_generic.mod.o
