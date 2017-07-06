@@ -1,0 +1,8 @@
+#!/bin/bash
+INSTALL_PATH=`pwd`/../../rootfs-2.6.35/bin/
+
+make clean
+if make; then
+	cp gpio_recover $INSTALL_PATH
+	
+fi
