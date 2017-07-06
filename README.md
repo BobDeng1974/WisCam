@@ -7,10 +7,8 @@
 	git clone https://github.com/RAKWireless/WisCam.git
 	
 2 build
-
-	sudo chmod u+x ./* -R
 	
-	then execute build.sh
+	execute build.sh
 	
 	cd WisCam
 	
