@@ -1,6 +1,0 @@
-#!/bin/sh
-set -e
-
-cp .config_n32903_fpv .config
-make -j4
-make install
