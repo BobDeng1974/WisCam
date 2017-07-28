@@ -201,20 +201,25 @@ int main(void)
 	int gpio_fd,ret;
 	printf("\n**** GPIO Test Program ****\n");
 
-	config_port(port,'i'); 
-	gpio_edge(port,3);
+	config_port(port,'i'); //set gpia5 “input mode”
+	gpio_edge(port,3); //set edge trigger “both”
 	snprintf(path,sizeof(path),"/sys/class/gpio/gpio%d/value",port);
-	if((gpio_fd = open(path,O_RDONLY))<0)
+	if((gpio_fd = open(path,O_RDONLY))<0)//open value 1:high level 0:low level
 	{
 		printf("open value fail\n");
 		return -1;
 	}
 
+	/*read value 1:high level 0:low level 
+	* if you want to set level,write to value 0 or 1
+	*/
 
 	if((ret = read(gpio_fd,buff,sizeof(buff)))<0)
 	{
 		printf("read value fail\n");
 	}
+	
+	
 	int i;
 	int new_value=atoi(buff);
 	int old_value=atoi(buff);

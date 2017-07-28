@@ -1,10 +1,6 @@
-# Standard firemware
+there are two firmwares:
 
-* kernel:"conprog.gz"
-* jffs:"app_fs_jffs2.img"
+1 UVC: plugin USB line , connect to your computer , you will see video on your computer , it's just as usb camera.
 
-## there are two standard image, copy them to tool/autowriter/ and copy autowriter/ to you windows, then execute AutoWriter.exe,you can burn firmware
-
-+ in linux:
-- cp conprog.gz ../tool/autowriter/
-- cp app_fs_jffs2.img ../tool/autowriter/
+2 Normal: "conprog.gz" is kernel  and "app_fs_jffs2.img" is jffs file system.
+ 
