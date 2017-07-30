@@ -1,11 +1,11 @@
-1,Download  APP Android(www.pgyer.com/wiscam) or IOS (search wiscam in Apple store).
-2, USB UVC mode :Power on WisCam via Micro USB to Windows PC USB .
+1. Download  APP Android(www.pgyer.com/wiscam) or IOS (search wiscam in Apple store).
+1. USB UVC mode :Power on WisCam via Micro USB to Windows PC USB .
 Wifi Camera Mode :Power on WisCam via Micro USB to DC Connector.
-3,Use your Phone or Tablet to connect WisCam AP. Such as Wiscam-xx-xx-xx-xx-xx-xx.
-4,Open APP and click the play icon to play MJEPG video.
-Right now , Enjoy it! 
+1. Use your Phone or Tablet to connect WisCam AP. Such as Wiscam-xx-xx-xx-xx-xx-xx.
+1. Open APP and click the play icon to play MJEPG video.
+## Right now , Enjoy it! 
 
-Youtube Toturial:
-Support Center£ºsupportcn.rakwireless.com
-Github Code£ºwww.github.com/rakwireless
-Wiki  Document£ºwiki.rakwireless.com
+- Youtube Toturial: [Search wiscam in youtube](http://www.youtube.com/) 
+- Support Center£ºsupportcn.rakwireless.com
+- Github Code£ºwww.github.com/rakwireless
+- Wiki  Document£ºwiki.rakwireless.com

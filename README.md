@@ -34,7 +34,11 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
   - WisCam provides a 10-bit ADC, a MIC-phone, a UART, a speaker and a dozen of GPIOs(the number will change with different Sub-Board).
 - Multi- Accessories
   - WisCam also provide accessories to make your application more amusing and easier to use. Sub-Camera and Sub-SD&USB are the critical parts in your application. Sub-Camera is using for collecting the image sensors and play in APPs via Wi-Fi. Sub-SD&USB is using for USB storage or UVC function and more accessories will be available in the near future.
+# WisCam Specification   
+  - [WisCam Open Source Video Module Specification V1.0.pdf](https://github.com/RAKWireless/WisCam/blob/master/Doc/WisCam%20Open%20Source%20Video%20Module%20Specification%20V1.0.pdf)
+
+# How to quick use   
+  - [Wiscam getting started guide](https://github.com/RAKWireless/WisCam/blob/master/Wiscam%20getting%20started%20guide.txt)
 
 # Programming guide   
   - [Firmware Building Steps.md](https://github.com/RAKWireless/WisCam/blob/master/Firmware%20Building%20Steps.md)
-
