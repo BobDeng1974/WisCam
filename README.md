@@ -36,5 +36,5 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
   - WisCam also provide accessories to make your application more amusing and easier to use. Sub-Camera and Sub-SD&USB are the critical parts in your application. Sub-Camera is using for collecting the image sensors and play in APPs via Wi-Fi. Sub-SD&USB is using for USB storage or UVC function and more accessories will be available in the near future.
 
 # Programming guide   
-[link](https://github.com/RAKWireless/WisCam/blob/master/Firmware%20Building%20Steps.md)
+  - [Firmware Building Steps.md](https://github.com/RAKWireless/WisCam/blob/master/Firmware%20Building%20Steps.md)
 
