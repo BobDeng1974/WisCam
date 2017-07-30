@@ -10,29 +10,29 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
  
 # 3	WisCam Feature
 
-- ＃	High-CPU
+- 	High-CPU
   - N32905R3DN is built on the ARM926EJ- 32-bit RISC CPU core. The frequency can be up to 200MHz@1.8V.
-- ＃	Wi-Fi Access
+- 	Wi-Fi Access
   - WisCam uses RTL8189FTV Wi-Fi chipset and it supports IEEE 802.11 b/g/n protocol, 2.4GHz Band, 1T1R antenna and SDIO interface. High-speed wireless connection can be up to 150 Mbps.
-- ＃	Easy To Use
+- 	Easy To Use
   - Once you power on WisCam, you can play the video in mobile apps or Windows program.
-- ＃	Video RAW DATA
+- 	Video RAW DATA
   - RAW DATA will make video scaling (up to x1~x8 scaling), video cropping , video overlapping etc. or change CMOS image sensor.
-- ＃	Open All Source Code
+- 	Open All Source Code
   - All software source code is available on Github and you can download it. https://codeload.github.com/RAKWireless/WisCam/zip/master
-- ＃	Arduino compatible
+- 	Arduino compatible
   - RAK WisCam fully compatible with Arduino UNO development board in hardware so it can extend your application with Arduino UNO.
-- ＃	P2P Cloud Server
+- 	P2P Cloud Server
   - WisCam also has integrated the P2P cloud server(Nabto P2P) to make playing the video anywhere when you access the internet . The mobile APP(Android and IOS) can play the video and interact bidirectional audio between WisCam and APPs.
-- ＃	Video Recording
+- 	Video Recording
   - WisCam can record up to 640x480@30FPS RGB MJPEG video.
-- ＃	UART for development
+- 	UART for development
   - WisCam provides UART interface to communicate with Host MCU or Arduino board. This allows you to focus on your application development. 
-- ＃	Mobile APPs
+- 	Mobile APPs
   - WisCam provides the source code of mobile app to discover the device and play video. Source code is available on github(https://codeload.github.com/RAKWireless/Wisview-RTSP/zip/master) or website (http://www.rakwireless.com/en/download/). 
-- ＃	Rich Peripherals
+- 	Rich Peripherals
   - WisCam provides a 10-bit ADC, a MIC-phone, a UART, a speaker and a dozen of GPIOs(the number will change with different Sub-Board).
-- ＃	Multi- Accessories
+- 	Multi- Accessories
   - WisCam also provide accessories to make your application more amusing and easier to use. Sub-Camera and Sub-SD&USB are the critical parts in your application. Sub-Camera is using for collecting the image sensors and play in APPs via Wi-Fi. Sub-SD&USB is using for USB storage or UVC function and more accessories will be available in the near future.
       
 
