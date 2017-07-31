@@ -48,5 +48,11 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
 # WisCam SCH&PCB   
   - [WisCam_1V2_SCH&PCB_2017.07.06.zip](https://github.com/RAKWireless/WisCam/blob/master/Files/WisCam_1V2_SCH%26PCB_2017.07.06.zip)
 
+# WisCam-Android-SDK   
+  - [WisCam_1V2_SCH&PCB_2017.07.06.zip](https://github.com/RAKWireless/WisCam/blob/master/APP/WisCam-Android-SDK)
+
+# WisCam-IOS-SDK   
+  - [WisCam_1V2_SCH&PCB_2017.07.06.zip](https://github.com/RAKWireless/WisCam/blob/master/APP/WisCam-IOS-SDK)
+
 
 
