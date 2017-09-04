@@ -16,15 +16,15 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
   
   - [RAK Wiscam Program Guide.pdf](https://github.com/RAKWireless/WisCam/blob/master/Doc/RAK%20Wiscam%20Program%20Guide.pdf)
   
-  - [WisCam Quick Start Guide](https://github.com/RAKWireless/WisCam/blob/master/Doc/RAK%20WisCam%20Quick%20Start%20Guide%20V1.2.pdf) 
+  - [WisCam Quick Start Guide](https://github.com/RAKWireless/WisCam/blob/master/Doc/RAK%20WisCam%20Quick%20Start%20Guide%20V1.2.pdf)
   
-  - [Play Real-Time Video via WIFI for the first time](https://www.youtube.com/watch?v=yFY3AHI7aLw&t=59s)
+  - (Video) [WisCam: Play Real-Time Video via WIFI for the first time](https://www.youtube.com/watch?v=yFY3AHI7aLw&t=59s)
   
-  - [Download source code and bulid your own application with linux](https://www.youtube.com/edit?o=U&video_id=NLRwWQN7ouI)
+  - (Video) [WisCam: Download source code and bulid your own application with linux](https://www.youtube.com/edit?o=U&video_id=NLRwWQN7ouI)
   
-  - [Play rtsp video in phone app and windows VLC](https://www.youtube.com/edit?o=U&video_id=0BKFoc8MxDo)
+  - (Video) [WisCam: Play rtsp video in phone app and windows VLC](https://www.youtube.com/edit?o=U&video_id=0BKFoc8MxDo)
   
-  - [Telnet connecting with wiscam](https://www.youtube.com/edit?o=U&video_id=0BKFoc8MxDo)
+  - (Video) [WisCam: Telnet connecting with wiscam](https://www.youtube.com/edit?o=U&video_id=0BKFoc8MxDo)
   
   - [Firmware Building Steps](https://github.com/RAKWireless/WisCam/blob/master/Firmware%20Building%20Steps.md)
 
