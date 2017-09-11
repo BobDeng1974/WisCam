@@ -17,7 +17,7 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
   - [RAK Wiscam Program Guide.pdf](https://github.com/RAKWireless/WisCam/blob/master/Doc/RAK%20Wiscam%20Program%20Guide.pdf)
   
   - [WisCam Quick Start Guide](https://github.com/RAKWireless/WisCam/blob/master/Doc/RAK%20WisCam%20Quick%20Start%20Guide%20V1.2.pdf)
-  
+  - [Getting started with WisCAM, a Linux-Based IP Camera](https://www.hackster.io/naresh-krish/getting-started-with-wiscam-a-linux-based-ip-camera-f1401b)
   - (Video) [WisCam: Play Real-Time Video via WIFI for the first time](https://www.youtube.com/watch?v=yFY3AHI7aLw&t=59s)
   
   - (Video) [WisCam: Download source code and bulid your own application with linux](https://www.youtube.com/edit?o=U&video_id=NLRwWQN7ouI)
@@ -26,7 +26,7 @@ WisCam supports YUV RAW data so developers can make video scaling (up to x1~x8 s
   
   - (Video) [WisCam: Telnet connecting with wiscam](https://www.youtube.com/edit?o=U&video_id=0BKFoc8MxDo)
   
-  - [Firmware Building Steps](https://github.com/RAKWireless/WisCam/blob/master/Firmware%20Building%20Steps.md)
+  - [Source Code Building Steps](https://github.com/RAKWireless/WisCam/blob/master/Firmware%20Building%20Steps.md)
 
 ## WisCam Hardware Design   
   - [WisCam_1V2_SCH&PCB_2017.07.06](https://github.com/RAKWireless/WisCam/blob/master/Files/WisCam_1V2_SCH%26PCB_2017.07.06.zip)
