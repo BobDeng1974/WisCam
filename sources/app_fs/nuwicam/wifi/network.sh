@@ -26,8 +26,8 @@ if [ "$VALID_CHIPSET" == "" ]; then
 	exit 1
 fi
 
-# set DEVICE to wlan0
-STA_DEVICE=wlan0
+# set DEVICE to wlan1
+STA_DEVICE=wlan1
 # set WiFi Chipset to RTL*
 STA_CHIPSET=$VALID_CHIPSET
 # set BOOTPROTO to DHCP/STATIC
@@ -54,8 +54,8 @@ STA_AUTH_KEY=`awk '{if ($1=="AUTH_KEY") {print $2}}' $NETCONFIG_FILE`
 # Trigger Key
 STA_WPS_TRIG_KEY=`awk '{if ($1=="WPS_TRIG_KEY") {print $2}}' $NETCONFIG_FILE`
 
-# set DEVICE to wlan1
-AP_DEVICE=wlan1
+# set DEVICE to wlan0
+AP_DEVICE=wlan0
 AP_CHIPSET=$STA_CHIPSET
 AP_BOOTPROTO=STATIC
 AP_IPADDR=`awk '{if ($1=="AP_IPADDR") {print $2}}' $NETCONFIG_FILE`
