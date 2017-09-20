@@ -6,6 +6,6 @@ Wifi Camera Mode :Power on WisCam via Micro USB to DC Connector.
 ## Right now , Enjoy it! 
 
 - Youtube Toturial: [Search wiscam in youtube](http://www.youtube.com/) 
-- Support Center£ºsupportcn.rakwireless.com
-- Github Code£ºwww.github.com/rakwireless
-- Wiki  Document£ºwiki.rakwireless.com
+- Support Center: supportcn.rakwireless.com
+- Github Code: www.github.com/rakwireless
+- Wiki  Document: wiki.rakwireless.com
