@@ -1,7 +1,156 @@
+<!doctype html>
 <html>
-	<head>
-		<script language="JavaScript">
-		window.location.href = "cgi-bin/version.cgi";
-		</script>
-	</head>
+    <head>
+    <meta charset="utf-8">
+    <title>wiscam</title>
+    <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-form.js"></script>
+    <script type="text/javascript">
+      function myCheck()
+      {
+        for(var i=0;i<document.stream_form.elements.length-1;i++)
+        {
+         if(document.stream_form.elements[i].value=="")
+         {
+           alert("The form should not be empty");
+           document.stream_form.elements[i].focus();
+           return false;
+         }
+        }
+        return true;
+        
+      }
+	
+      $(document).ready(function() {  
+          $("#netRet").ajaxForm(function(data){  
+              
+              ret = JSON.stringify(data);
+              var str = jQuery.parseJSON(ret);
+              //alert("value:" + str.value);
+              if(str.value == 0){
+                  alert("Wifi Configure Success");
+              }else{
+              	alert(ret);
+              }
+          });
+		  
+		  $("#restnRet").ajaxForm(function(data){
+			  ret = JSON.stringify(data);
+              var str = jQuery.parseJSON(ret);
+			  if(str.value == 0){
+                  alert("Restart Success");
+              }else{
+              	alert(ret);
+              }
+			  //alert("Restart Success");
+		  });
+		  
+		  $("#stream_form").ajaxForm(function(data){
+			  
+			  ret = JSON.stringify(data);
+              var str = jQuery.parseJSON(ret);
+              //alert("value:" + str.value);
+              if(str.value == 0){
+                  alert("Streams Chenge Success");
+              }else{
+              	alert(ret);
+              }
+		  });
+		  
+		  $("#listRet").ajaxForm(function(data){
+			  ret = JSON.stringify(data);
+              var str = jQuery.parseJSON(ret);
+			  if(str.BOOTPROTO){
+			    alert("BOOTPROTO: " + str.BOOTPROTO + "\n STA_SSID: " + str.SSID + "\n AUTH_MODE: " + str.AUTH_MODE + "\n ENCRYPT_TYPE: " + str.ENCRYPT_TYPE + "\n AUTH_KEY: " + str.AUTH_KEY + "\n WPS_TRIG_KEY: " + str.WPS_TRIG_KEY + "\n AP_IPADDR: " + str.AP_IPADDR + "\n AP_SSID: " + str.AP_SSID + "\n AP_AUTH_MODE: " + str.AP_AUTH_MODE + "\n AP_ENCRYPT_TYPE: " + str.AP_ENCRYPT_TYPE + "\n AP_AUTH_KEY: " + str.AP_AUTH_KEY + "\n AP_CHANNEL: " + str.AP_CHANNEL);
+				
+			  }else if(str.VINWIDTH){
+				alert("VINWIDTH: "+str.VINWIDTH+"\n VINHEIGHT: " + str.VINHEIGHT + "\n JPEGENCWIDTH: " + str.JPEGENCWIDTH + "\n JPEGENCHEIGHT: " + str.JPEGENCHEIGHT + "\n BITRATE: " + str.BITRATE);
+			  }else{
+			    alert(ret);
+			  }
+		  });
+		  
+      }); 
+    </script>
+    </head>
+    <p><img src="favicon.ico"/><font color="#FF0000">Welcom to RAK WisCam</font></p>
+
+    <body bgcolor="#20B2AA">
+    <font color="#F0F8FF">
+    <hr>
+    <h4>Change video params</h4>
+    <iframe id="stream_iframe_norefresh" name="stream_iframe_norefresh" style="display: none"></iframe>
+    <form name="stream_form" id="stream_form" action="./cgi-bin/param.cgi" method="GET" onsubmit="return myCheck()" target="stream_iframe_norefresh">
+        <input type="hidden" readonly name="action" value="update">
+        <input type="hidden" readonly name="group" value="stream">
+        <br>
+        <br>
+        Video-in width:
+        <input type="text" name="VINWIDTH" value="">
+        Video-in height:
+        <input type="text" name="VINHEIGHT" value="">
+        <br>
+        <br>
+        Stream width:
+        <input type="text" name="JPEGENCWIDTH" value="">
+        Stream height:
+        <input type="text" name="JPEGENCHEIGHT" value="">
+        <br>
+        <br>
+        Stream bitrate:
+        <input type="text" name="BITRATE" value="">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+    <h4>Connect to router</h4>
+    <iframe id="net_iframe_norefresh" name="net_iframe_norefresh" style="display: none"></iframe>
+    <form id="netRet" name="netRet" action="cgi-bin/param.cgi" method="GET" enctype="multipart/form-data" target="net_iframe_norefresh">
+        <input type="hidden" readonly name="action" value="update">
+        <input type="hidden" readonly name="group" value="wifi">
+        <br>
+        <br>
+        Net SSID:
+        <input type="text" name="SSID" value="">
+        Password:
+        <input type="text" name="AUTH_KEY" value="">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+	<h4>List Params</h4>
+	<p>Here you can view the wifi or video stream params via "List"</p>
+	<br>
+    <iframe id="list_iframe" name="list_iframe" style="display: none"></iframe> <!--onSubmit="return notjumpweb();-->
+    <form id="listRet" action="cgi-bin/param.cgi" method="GET" target="list_iframe">
+		<input type="hidden" readonly name="action" value="list">
+        <select name="group">
+            <option value="stream">stream</option>
+            <option value="wifi">wifi</option>
+        </select>
+        <input type="submit" value="List">
+    </form>
+	<br>
+	<hr>
+	<h4>Restart</h4>
+    <p>After change stream params, restart the video "stream";<br>
+	And after change wifi params, restart the "board".
+	</p>
+    <iframe id="rest_iframe" name="rest_iframe" style="display: none"></iframe> <!--onSubmit="return notjumpweb();-->
+    <form id="restnRet" action="cgi-bin/restart.cgi" method="GET" target="rest_iframe">
+        <select name="group">
+            <option value="stream">stream</option>
+            <option value="board">board</option>
+        </select>
+        <input type="submit" value="Restart">
+    </form>
+    <br>
+    <br>
+	<hr>
+    </font>
+</body>
 </html>
