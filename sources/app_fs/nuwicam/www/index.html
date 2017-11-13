@@ -5,7 +5,102 @@
     <title>wiscam</title>
     <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="jquery/jquery-form.js"></script>
-    <script type="text/javascript">
+	<script type="text/javascript">
+	//<style type="text/css" adt="123"></style><script>!
+	
+	  function wifidata(jsonobj)//,streamobj,option)
+	  {
+		//if(option == "wifiparam"){
+			document.getElementById("sta_proto").value=jsonobj.BOOTPROTO;
+			document.getElementById("sta_ipaddr").value=jsonobj.IPADDR;
+			document.getElementById("sta_gateway").value=jsonobj.GATEWAY;
+			document.getElementById("sta_ssid").value=jsonobj.SSID;
+			document.getElementById("sta_auth_mode").value=jsonobj.AUTH_MODE;
+			document.getElementById("sta_encrypt_type").value=jsonobj.ENCRYPT_TYPE;
+			document.getElementById("sta_auth_key").value=jsonobj.AUTH_KEY;
+			document.getElementById("sta_wps_trig_key").value=jsonobj.WPS_TRIG_KEY;
+		
+			document.getElementById("ap_ipaddr").value=jsonobj.AP_IPADDR;
+		    document.getElementById("ap_ssid").value=jsonobj.AP_SSID;
+		    document.getElementById("ap_auth_mode").value=jsonobj.AP_AUTH_MODE;
+		    document.getElementById("ap_encrypt_type").value=jsonobj.AP_ENCRYPT_TYPE;
+		    document.getElementById("ap_auth_key").value=jsonobj.AP_AUTH_KEY;
+		    document.getElementById("ap_channel").value=jsonobj.AP_CHANNEL;
+		//}else if(option == "streamparam"){
+			
+		//}
+	  }
+	  
+	  function streamdata(streamobj){
+		document.getElementById("vinwidth").value=streamobj.VINWIDTH;
+		document.getElementById("vinheight").value=streamobj.VINHEIGHT;
+		document.getElementById("jpegencwidth").value=streamobj.JPEGENCWIDTH;
+		document.getElementById("jpegencheight").value=streamobj.JPEGENCHEIGHT;
+		document.getElementById("bitrate").value=streamobj.BITRATE;
+	  }
+	  
+  
+	  function wifi_show(){
+		var xmlhttp_wifi;
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp_wifi=new XMLHttpRequest();
+		}else{// code for IE6, IE5
+			xmlhttp_wifi=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp_wifi.onreadystatechange=function(){
+		
+			if (xmlhttp_wifi.readyState==4 && xmlhttp_wifi.status==200)
+			{
+				
+				var wifistr = xmlhttp_wifi.responseText;
+				//jsonobj = jQuery.parseJSON(wifistr);
+				wifiobj = eval('(' + wifistr + ')');
+				//alert(jsonobj.SSID);
+				//sta_id = JSON.stringify(jsonobj.SSID);
+				wifidata(wifiobj)//,"","wifiparam");
+				
+				//sta_id = jsonobj.SSID;
+			}
+		}
+		xmlhttp_wifi.open("GET","/cgi-bin/param.cgi?action=list&group=wifi" + Math.random(),true);
+		xmlhttp_wifi.send();
+		//alert("excute");
+	  }
+	  
+	  function stream_show(){
+		//alert("stream_show");
+		var xmlhttp_stream;
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp_stream=new XMLHttpRequest();
+		}else{// code for IE6, IE5
+			xmlhttp_stream=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp_stream.onreadystatechange=function(){
+		
+			if (xmlhttp_stream.readyState==4 && xmlhttp_stream.status==200)
+			{
+				
+				var streamstr = xmlhttp_stream.responseText;
+				//streamobj = jQuery.parseJSON(streamstr);
+				streamobj = eval('(' + streamstr + ')');
+				//alert(streamobj.BITRATE);
+				//bitrate = JSON.stringify(streamobj.BITRATE);
+				streamdata(streamobj)//,"","wifiparam");
+				
+			}
+		}
+		xmlhttp_stream.open("GET","/cgi-bin/param.cgi?action=list&group=stream" + Math.random(),true);
+		xmlhttp_stream.send();
+		
+	  }
+
+	  window.onload = function(){
+		wifi_show();
+		stream_show();
+	  }
+	
       function myCheck()
       {
         for(var i=0;i<document.stream_form.elements.length-1;i++)
@@ -32,6 +127,7 @@
               }else{
               	alert(ret);
               }
+
           });
 		  
 		  $("#restnRet").ajaxForm(function(data){
@@ -68,15 +164,21 @@
 			  }else{
 			    alert(ret);
 			  }
-		  });
-		  
+		  });		
+          
       }); 
+	  
+	  
     </script>
-    </head>
+	<!--
+	<style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style>
+    -->
+	</head>
     <p><img src="favicon.ico"/><font color="#FF0000">Welcom to RAK WisCam</font></p>
-
+	<div id="myDiv"></div>
     <body bgcolor="#20B2AA">
     <font color="#F0F8FF">
+	<div id="myDiv"></div>
     <hr>
     <h4>Change video params</h4>
     <iframe id="stream_iframe_norefresh" name="stream_iframe_norefresh" style="display: none"></iframe>
@@ -86,46 +188,86 @@
         <br>
         <br>
         Video-in width:
-        <input type="text" name="VINWIDTH" value="">
+        <input type="text" id="vinwidth" name="VINWIDTH" value=""><br>
         Video-in height:
-        <input type="text" name="VINHEIGHT" value="">
-        <br>
-        <br>
+        <input type="text" id="vinheight" name="VINHEIGHT" value=""><br>
         Stream width:
-        <input type="text" name="JPEGENCWIDTH" value="">
+        <input type="text" id="jpegencwidth" name="JPEGENCWIDTH" value=""><br>
         Stream height:
-        <input type="text" name="JPEGENCHEIGHT" value="">
-        <br>
-        <br>
+        <input type="text" id="jpegencheight" name="JPEGENCHEIGHT" value=""><br>
         Stream bitrate:
-        <input type="text" name="BITRATE" value="">
+        <input type="text" id="bitrate" name="BITRATE" value="">
         <br>
         <br>
         <input type="submit" value="Submit">
     </form>
     <br>
     <hr>
-    <h4>Connect to router</h4>
+    <h4>Change wifi parames</h4>
     <iframe id="net_iframe_norefresh" name="net_iframe_norefresh" style="display: none"></iframe>
     <form id="netRet" name="netRet" action="cgi-bin/param.cgi" method="GET" enctype="multipart/form-data" target="net_iframe_norefresh">
         <input type="hidden" readonly name="action" value="update">
         <input type="hidden" readonly name="group" value="wifi">
         <br>
         <br>
-        Net SSID:
-        <input type="text" name="SSID" value="">
-        Password:
-        <input type="text" name="AUTH_KEY" value="">
+		STA_PROTO:
+		<select id="sta_proto" name="BOOTPROTO" value="">
+            <option value="DHCP">DHCP</option>
+            <option value="STATIC">STATIC</option>
+        </select><br>
+		STA_IPADDR:
+		<input type="text" id="sta_ipaddr" name="IPADDR" value=""><br>
+		STA_GATEWAY:
+		<input type="text" id="sta_gateway" name="GATEWAY" value=""><br>
+        STA_SSID:
+        <input type="text" id="sta_ssid" name="SSID" value=""><br>
+		STA_AUTH_MODE:
+		<select id="sta_auth_mode" name="AUTH_MODE">
+            <option value="WPA2PSK">WPA2PSK</option>
+            <option value="OPEN">OPEN</option>
+        </select><br>
+		STA_ENCRYPT_TYPE:
+		<select id="sta_encrypt_type" name="ENCRYPT_TYPE" value="">
+            <option value="AES">AES</option>
+            <option value="NONE">NONE</option>
+        </select><br>
+        STA_AUTH_KEY:
+        <input type="text" id="sta_auth_key" name="AUTH_KEY"><br>
+		STA_WPS_TRIG_KEY:
+		<input type="text" id="sta_wps_trig_key" name="WPS_TRIG_KEY" value=""><br>
+		AP_IPADDR:
+		<input type="text" id="ap_ipaddr" name="AP_IPADDR" value=""><br>
+		AP_SSID:
+		<input type="text" id="ap_ssid" name="AP_SSID" value=""><br>
+		AP_AUTH_MODE:
+		<select id="ap_auth_mode" name="AP_AUTH_MODE">
+			<option value="OPEN">OPEN</option>
+            <option value="WPA2PSK">WPA2PSK</option>
+        </select><br>
+		AP_ENCRYPT_TYPE:
+		<select id="ap_encrypt_type" name="AP_ENCRYPT_TYPE">
+		    <option value="NONE">NONE</option>
+            <option value="AES">AES</option>
+        </select><br>
+		AP_AUTH_KEY:
+		<input type="text" id="ap_auth_key" name="AP_AUTH_KEY" value=""><br>
+		AP_CHANNEL:
+		<input type="text" id="ap_channel" name="AP_CHANNEL" value=""><br>
         <br>
         <br>
+		<!--
+		<input type="button" value="Submit" onclick="wifiBtnClick()">
+		-->
         <input type="submit" value="Submit">
+
     </form>
     <br>
     <hr>
+<!--
 	<h4>List Params</h4>
 	<p>Here you can view the wifi or video stream params via "List"</p>
 	<br>
-    <iframe id="list_iframe" name="list_iframe" style="display: none"></iframe> <!--onSubmit="return notjumpweb();-->
+    <iframe id="list_iframe" name="list_iframe" style="display: none"></iframe>
     <form id="listRet" action="cgi-bin/param.cgi" method="GET" target="list_iframe">
 		<input type="hidden" readonly name="action" value="list">
         <select name="group">
@@ -136,6 +278,7 @@
     </form>
 	<br>
 	<hr>
+-->
 	<h4>Restart</h4>
     <p>After change stream params, restart the video "stream";<br>
 	And after change wifi params, restart the "board".
