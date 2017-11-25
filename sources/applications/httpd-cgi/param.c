@@ -63,8 +63,10 @@ static char *g_astrWifiParam[] = {
 	"ENCRYPT_TYPE",
 	"AUTH_KEY",
 	"WPS_TRIG_KEY",
+	"AP_IPADDR",
 	"AP_SSID",
-	"AP_CHANNEL",
+	"AP_AUTH_MODE",
+	"AP_ENCRYPT_TYPE",
 	"AP_AUTH_KEY",
 	"AP_CHANNEL",
 	

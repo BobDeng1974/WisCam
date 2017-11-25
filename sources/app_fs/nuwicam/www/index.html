@@ -181,21 +181,22 @@
 	<div id="myDiv"></div>
     <hr>
     <h4>Change video params</h4>
+	<p>The video params must be multiple of 8</p>
     <iframe id="stream_iframe_norefresh" name="stream_iframe_norefresh" style="display: none"></iframe>
     <form name="stream_form" id="stream_form" action="./cgi-bin/param.cgi" method="GET" onsubmit="return myCheck()" target="stream_iframe_norefresh">
         <input type="hidden" readonly name="action" value="update">
         <input type="hidden" readonly name="group" value="stream">
         <br>
         <br>
-        Video-in width:
+        Video-in Width:
         <input type="text" id="vinwidth" name="VINWIDTH" value=""><br>
-        Video-in height:
+        Video-in Height:
         <input type="text" id="vinheight" name="VINHEIGHT" value=""><br>
-        Stream width:
+        Stream Width:
         <input type="text" id="jpegencwidth" name="JPEGENCWIDTH" value=""><br>
-        Stream height:
+        Stream Height:
         <input type="text" id="jpegencheight" name="JPEGENCHEIGHT" value=""><br>
-        Stream bitrate:
+        Bitrate:
         <input type="text" id="bitrate" name="BITRATE" value="">
         <br>
         <br>
@@ -204,6 +205,7 @@
     <br>
     <hr>
     <h4>Change wifi parames</h4>
+	<p>The module is AP mode by default, but it will be "AP + STA" mode after connect to router</p>
     <iframe id="net_iframe_norefresh" name="net_iframe_norefresh" style="display: none"></iframe>
     <form id="netRet" name="netRet" action="cgi-bin/param.cgi" method="GET" enctype="multipart/form-data" target="net_iframe_norefresh">
         <input type="hidden" readonly name="action" value="update">
@@ -234,7 +236,7 @@
         STA_AUTH_KEY:
         <input type="text" id="sta_auth_key" name="AUTH_KEY"><br>
 		STA_WPS_TRIG_KEY:
-		<input type="text" id="sta_wps_trig_key" name="WPS_TRIG_KEY" value=""><br>
+		<input type="text" readonly id="sta_wps_trig_key" name="WPS_TRIG_KEY" value="HOME"><br>
 		AP_IPADDR:
 		<input type="text" id="ap_ipaddr" name="AP_IPADDR" value=""><br>
 		AP_SSID:
@@ -252,7 +254,22 @@
 		AP_AUTH_KEY:
 		<input type="text" id="ap_auth_key" name="AP_AUTH_KEY" value=""><br>
 		AP_CHANNEL:
-		<input type="text" id="ap_channel" name="AP_CHANNEL" value=""><br>
+		<select id="ap_channel" name="AP_CHANNEL">
+		    <option value="AUTO">AUTO</option>
+            <option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+        </select><br>
         <br>
         <br>
 		<!--
