@@ -6,7 +6,7 @@ OUTPUT_PATH=$CUR_PATH"/../app_fs/nuwicam"
 
 mkdir -p $OUTPUT_PATH
 
-BUILD_SET="boa-0.94.13 httpd-cgi RTSPServer ser2net-2.10.0 gpio"
+BUILD_SET="boa-0.94.13 httpd-cgi RTSPServer ser2net-2.10.0 gpio mqtt restful_server"
 
 for i in $BUILD_SET; do
 	cd $CUR_PATH

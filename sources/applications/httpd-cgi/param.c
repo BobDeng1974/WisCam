@@ -252,7 +252,6 @@ int configs_update ( char * pcStr )
 				pParamName = strtok(pToken, "=");
 				pParamValue = pParamName + strlen(pParamName) + 1;
 				
-
 				if ( WriteParamStr(eGroupID, pParamName, pParamValue) != 0 )
 				{
 					iRet=-1;
@@ -272,7 +271,7 @@ int configs_list ( char * pcStr )
 	if ((pHeadPtr = strstr(pcStr, "group=")) != NULL) {
 		pHeadPtr += strlen("group=");
 		if ( (eGroupID=configs_search_groupname ( pHeadPtr )) != eCONFIG_GROUP_UNKNOWN )
-			return configs_list_all ( eGroupID );		
+			return configs_list_all ( eGroupID );	
 	}	
 	return eCONFIG_GROUP_UNKNOWN;
 }
