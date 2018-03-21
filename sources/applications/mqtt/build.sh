@@ -14,6 +14,8 @@ else
         fi
 fi
 
+tar zvxf $MQTT_PATH".tar.gz"
+
 cd $MQTT_PATH
 if [ -d $BUILD_PATH ]; then
 	cd $BUILD_PATH

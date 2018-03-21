@@ -36,10 +36,6 @@
 	--userid none
 	--password none
 
- for example:
-
-    stdoutsub UUID(nabto_uuid)
-
 */
 #include <stdio.h>
 #include <memory.h>
@@ -67,24 +63,13 @@ void cfinish(int sig)
 void messageArrived(MessageData* md)
 {
 	MQTTMessage* message = md->message;
-/*
-	if (opts.showtopics)
-		printf("%.*s\t", md->topicName->lenstring.len, md->topicName->lenstring.data);
-	if (opts.nodelimiter)
-		printf("%.*s", (int)message->payloadlen, (char*)message->payload);
-	else
-		printf("%.*s%s", (int)message->payloadlen, (char*)message->payload, opts.delimiter);
-*/	
+
 	printf("%.*s\t", md->topicName->lenstring.len, md->topicName->lenstring.data);
 	if((strstr(message->payload, "\"led\":") != NULL) && (strstr(message->payload, "\"on\""))){
-		printf("led on\n");
 		rk_ledinf.l_write(1);
-//		system("echo default-on > /sys/class/leds/LINK/trigger");
 		
 	}else if((strstr(message->payload, "\"led\":") != NULL) && (strstr(message->payload, "\"off\""))){
-		printf("led off\n");
 		rk_ledinf.l_write(0);
-//		system("echo none > /sys/class/leds/LINK/trigger");
 	}else
 		printf("subscribe led status error\n");
 	//fflush(stdout);
@@ -150,18 +135,10 @@ int mqttmsg(RK_SensorInf rk_sensorinf, MqttOpts opts)
 		pub_msg.payloadlen = strlen(pubStr);
 		
 		rc = MQTTPublish(&c, pubTopc, &pub_msg);
-		printf("Published: %s Topic: %s rc: %d clientid: %s\n", pub_msg.payload, pubTopc, rc, data.clientID.cstring);
 		if((rc = MQTTYield(&c, 5000)) != 0)
 			printf("MQTTYield failed: %d\n",rc);
 
 	}
-
-/*
-	while (!toStop)
-	{
-		MQTTYield(&c, 1000);
-	}
-*/	
 
 	printf("Stopping\n");
 
