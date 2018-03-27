@@ -120,7 +120,7 @@ int rk_get_method(struct http_message *hm, struct mg_connection *nc)
 			if((system("/mnt/nuwicam/bin/wifimsg.sh sta")) != 0)
 			{
 				mg_printf(nc, "%s", "HTTP/1.1 404 Not Found\r\n"RK_HTTP_HEADER);
-				printf("ap messages failed\n");
+				printf("sta messages failed\n");
 				return -1;
 			}
 

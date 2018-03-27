@@ -653,7 +653,7 @@ EXPORT_SYMBOL(w55fa93_device_pwm3);
 static struct platform_device *w55fa93_public_dev[] __initdata = {
 //	&w55fa93_serial_device,
 	&w55fa93_flash_device,
-//Wayne	&w55fa93_device_ohci,
+	&w55fa93_device_ohci,
 //Wayne	&w55fa93_device_usbgadget,
 	&w55fa93_device_spi,
 	&w55fa93_device_wdt,
